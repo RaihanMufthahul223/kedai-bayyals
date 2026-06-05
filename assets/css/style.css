@@ -16,9 +16,9 @@ body { background-color: #FDFBF7; color: #3E2723; }
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(193, 127, 36, 0.12);
   /* Force GPU rendering to prevent invisible/repaint bugs on mobile */
- transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
-  will-change: transform, opacity; /* Tambahkan opacity */
+  will-change: transform;
 }
 
 /* ─── Hero ─────────────────────────────────────────── */
