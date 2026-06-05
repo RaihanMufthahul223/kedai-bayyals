@@ -10,6 +10,7 @@ body { background-color: #FDFBF7; color: #3E2723; }
 
 /* ─── Glassmorphism Navbar ─────────────────────────── */
 .glass-nav {
+  background-color: #FDFBF7; /* Fallback solid color for browsers that don't support rgba or fail repaint */
   background: rgba(253, 251, 247, 0.78);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
