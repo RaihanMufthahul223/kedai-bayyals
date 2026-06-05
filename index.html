@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedai Bayyals — Nikmati Setiap Rasa</title>
+  <meta name="description" content="Tempat nongkrong hangat dengan racikan kopi pilihan dan suasana estetik di setiap sudutnya di Makassar." />
+
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kedaibayyals.com/" />
+  <meta property="og:title" content="Kedai Bayyals — Nikmati Setiap Rasa, Temukan Ceritamu" />
+  <meta property="og:description" content="Tempat nongkrong hangat dengan racikan kopi pilihan dan suasana estetik di Makassar. Pesan menu favoritmu lewat WhatsApp sekarang!" />
+  <meta property="og:image" content="assets/images/logo.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kedai Bayyals — Nikmati Setiap Rasa, Temukan Ceritamu" />
+  <meta name="twitter:description" content="Tempat nongkrong hangat dengan racikan kopi pilihan dan suasana estetik di Makassar." />
+  <meta name="twitter:image" content="assets/images/logo.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.jpg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    // Tailwind custom config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    '#FDFBF7',
+            'cream-dark': '#F5F0E8',
+            brown:    '#3E2723',
+            'brown-light': '#6D4C41',
+            charcoal: '#1E1E1E',
+            matcha:   '#2E4F4F',
+            'matcha-light': '#3D6B6B',
+            amber:    '#C17F24',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS (Visual Styling & Keyframe Animations) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="font-body overflow-x-hidden">
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║           STICKY GLASSMORPHISM NAV           ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <header id="navbar" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <nav class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <a href="#home" class="font-display text-2xl font-semibold tracking-wide text-brown">
+          Kedai <span class="text-amber italic">Bayyals</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-brown-light">
+          <li><a href="#home"     class="hover:text-amber transition-colors duration-200">Home</a></li>
+          <li><a href="#menu"     class="hover:text-amber transition-colors duration-200">Menu</a></li>
+          <li><a href="#location" class="hover:text-amber transition-colors duration-200">Lokasi</a></li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <a href="https://wa.me/6288973127414?text=Halo%20Kedai%20Bayyals%2C%20saya%20mau%20pesan!"
+           target="_blank"
+           class="hidden md:inline-flex btn-matcha text-cream text-sm font-semibold px-5 py-2.5 rounded-full">
+          Pesan Sekarang
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+          <span class="ham-line block w-6 h-0.5 bg-brown transition-all duration-300"></span>
+          <span class="ham-line block w-6 h-0.5 bg-brown transition-all duration-300"></span>
+          <span class="ham-line block w-4 h-0.5 bg-brown transition-all duration-300 self-end"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-amber/10">
+      <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
+        <a href="#home"     class="text-brown-light font-medium hover:text-amber transition-colors" onclick="closeMobileMenu()">Home</a>
+        <a href="#menu"     class="text-brown-light font-medium hover:text-amber transition-colors" onclick="closeMobileMenu()">Menu</a>
+        <a href="#location" class="text-brown-light font-medium hover:text-amber transition-colors" onclick="closeMobileMenu()">Lokasi</a>
+        <a href="https://wa.me/6288973127414?text=Halo%20Kedai%20Bayyals%2C%20saya%20mau%20pesan!"
+           target="_blank"
+           class="btn-matcha text-center text-cream text-sm font-semibold px-5 py-3 rounded-full mt-1">
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║                 HERO SECTION                  ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
+    <!-- Bottom gradient fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FDFBF7] to-transparent z-10"></div>
+
+    <div class="relative z-20 text-center px-6 sm:px-10 max-w-3xl mx-auto pt-20">
+      <!-- Eyebrow -->
+      <p class="text-amber text-sm font-medium tracking-[0.25em] uppercase mb-4 opacity-0 animate-[fadeInDown_0.8s_0.3s_forwards]"
+         style="animation: fadeInUp 0.7s 0.2s both;">
+        ✦ Est. 2024 — Selamat Datang ✦
+      </p>
+
+      <!-- Headline -->
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-light text-cream leading-tight mb-6"
+          style="animation: fadeInUp 0.9s 0.45s both; opacity:0;">
+        Nikmati Setiap Rasa,<br/>
+        <em class="font-normal">Temukan Ceritamu</em>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="text-cream/75 text-base sm:text-lg font-light leading-relaxed mb-10 max-w-xl mx-auto"
+         style="animation: fadeInUp 0.9s 0.65s both; opacity:0;">
+        Tempat nongkrong hangat dengan racikan kopi pilihan dan suasana estetik di setiap sudutnya.
+      </p>
+
+      <!-- CTA -->
+      <div style="animation: fadeInUp 0.9s 0.85s both; opacity:0;" class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#menu"
+           class="btn-amber-glow text-white font-semibold text-sm px-8 py-4 rounded-full inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Lihat Menu Kami
+        </a>
+        <a href="#location"
+           class="border border-cream/40 text-cream font-medium text-sm px-8 py-4 rounded-full hover:bg-cream/10 transition-all duration-200 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Temukan Kami
+        </a>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="mt-16 flex justify-center" style="animation: fadeInUp 1s 1.2s both; opacity:0;">
+        <div class="flex flex-col items-center gap-2 text-cream/40 text-xs tracking-widest uppercase">
+          <span>Scroll</span>
+          <div class="w-px h-8 bg-gradient-to-b from-cream/40 to-transparent animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║           BRAND STRIP / TAGLINE BAR          ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section class="bg-brown py-5 overflow-hidden">
+    <div class="flex gap-12 whitespace-nowrap animate-[marquee_22s_linear_infinite] text-cream/60 text-xs tracking-[0.3em] uppercase font-medium select-none" id="marquee-track">
+      <span>✦ Specialty Coffee</span>
+      <span>✦ Es Kopi Susu</span>
+      <span>✦ Matcha Latte</span>
+      <span>✦ Thai Tea</span>
+      <span>✦ Suasana Estetik</span>
+      <span>✦ Racikan Pilihan</span>
+      <span>✦ Specialty Coffee</span>
+      <span>✦ Es Kopi Susu</span>
+      <span>✦ Matcha Latte</span>
+      <span>✦ Thai Tea</span>
+      <span>✦ Suasana Estetik</span>
+      <span>✦ Racikan Pilihan</span>
+    </div>
+
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║           ABOUT / AMBIANCE STRIP             ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section class="py-20 px-6 sm:px-10 bg-cream">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div data-aos="fade-right" data-aos-duration="800">
+        <p class="text-amber text-xs font-medium tracking-[0.3em] uppercase mb-4">Tentang Kami</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-light text-brown leading-snug mb-6">
+          Lebih dari Sekadar<br/><em>Secangkir Kopi</em>
+        </h2>
+        <p class="text-brown-light leading-relaxed mb-6 text-sm sm:text-base">
+          Di Kedai Bayyals, kami percaya bahwa kopi yang baik dimulai dari biji pilihan, diseduh dengan penuh perhatian, dan dinikmati dalam suasana yang hangat. Setiap sudut kedai kami dirancang agar kamu betah berlama-lama.
+        </p>
+        <p class="text-brown-light leading-relaxed text-sm sm:text-base">
+          Baik kamu datang sendiri, bersama teman, atau sekadar singgah sejenak — ada tempat yang pas untukmu di sini.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="flex flex-wrap gap-3 mt-8">
+          <span class="bg-cream-dark border border-amber/20 text-brown text-xs font-medium px-4 py-2 rounded-full">☕ Kopi Specialty</span>
+          <span class="bg-cream-dark border border-amber/20 text-brown text-xs font-medium px-4 py-2 rounded-full">🍵 Tea Series</span>
+          <span class="bg-cream-dark border border-amber/20 text-brown text-xs font-medium px-4 py-2 rounded-full">📍 Free WiFi</span>
+          <span class="bg-cream-dark border border-amber/20 text-brown text-xs font-medium px-4 py-2 rounded-full">🪑 Cozy Seat</span>
+        </div>
+      </div>
+
+      <!-- Image collage -->
+      <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="150" class="grid grid-cols-2 gap-3 sm:gap-4">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&auto=format&fit=crop"
+             alt="Coffee pour" class="rounded-2xl w-full h-48 sm:h-56 object-cover shadow-lg" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80&auto=format&fit=crop"
+             alt="Cafe interior" class="rounded-2xl w-full h-48 sm:h-56 object-cover shadow-lg mt-8" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80&auto=format&fit=crop"
+             alt="Latte art" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-lg" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&auto=format&fit=crop"
+             alt="Coffee cup" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-lg mt-4" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║           INTERACTIVE MENU SECTION           ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section id="menu" class="py-20 px-6 sm:px-10 bg-cream-dark noise-overlay">
+    <div class="max-w-6xl mx-auto relative z-10">
+
+      <!-- Section header -->
+      <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="700">
+        <p class="text-amber text-xs font-medium tracking-[0.3em] uppercase mb-3">Our Menu</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-light text-brown leading-tight mb-2">
+          Pilihan Racikan<br/><em>Untuk Harimu</em>
+        </h2>
+        <p class="text-brown-light text-sm mt-3">
+          Juga tersedia untuk dipesan melalui 
+          <a href="https://l.instagram.com/?u=https%3A%2F%2Fshopee.co.id%2Funiversal-link%2Fnow-food%2Fshop%2F23013485%3Fdeep_and_deferred%3D1%26shareChannel%3Dcopy_link%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnA15TmfkjxBCrqTmYX14ILEE6LTBHUWr_P5Q4ScOx4_8d64gE1BQMFXD2xIw_aem_1IdoKqXngmHUym4SAB_-Tw&e=AUAWVNSr9fV8LH93sfwiJ1OkHv5_7rPwMdOrHP9ytjAF2dXNq1tjDDDieLyI4ljP5lo9ptJtBuKnCe3xiV0gfce__6mGdAR218JeFApIbVhowwAJyLlD71ZWLbpIfZWojvEztts" target="_blank" class="inline-flex items-center gap-1.5 text-[#EE4D2D] hover:underline font-semibold mx-1">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            ShopeeFood ↗
+          </a>
+        </p>
+        <div class="divider-ornament max-w-xs mx-auto mt-6">
+          <span class="text-amber text-sm">✦</span>
+        </div>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex justify-center gap-3 mb-10" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <button id="tab-kopi" class="tab-btn active font-medium text-sm px-7 py-3 rounded-full border border-matcha/20"
+                onclick="switchTab('kopi')">
+          ☕ Kopi Series
+        </button>
+        <button id="tab-tea" class="tab-btn font-medium text-sm px-7 py-3 rounded-full border border-matcha/20 bg-cream text-brown"
+                onclick="switchTab('tea')">
+          🍵 Tea Series
+        </button>
+        <button id="tab-biji" class="tab-btn font-medium text-sm px-7 py-3 rounded-full border border-matcha/20 bg-cream text-brown"
+                onclick="switchTab('biji')">
+          🫘 Biji Kopi
+        </button>
+      </div>
+
+      <!-- ── KOPI SERIES CARDS ─────────────────────── -->
+      <div id="panel-kopi" class="menu-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+           data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+
+        <!-- Card template -->
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">☕</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Espresso</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">8 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Shot kopi pekat dengan crema lembut di atasnya.</p>
+          <button data-id="espresso" data-name="Espresso" data-price="8000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">🧊</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Ice Americano</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">10 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Kopi hitam segar dengan sensasi dingin yang menyegarkan.</p>
+          <button data-id="ice-americano" data-name="Ice Americano" data-price="10000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">🥛</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Es Kopi Susu</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">10 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Perpaduan kopi dan susu khas yang seimbang dan nikmat.</p>
+          <button data-id="es-kopi-susu" data-name="Es Kopi Susu" data-price="10000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">☕</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Kopi Susu Panas</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">10 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Kopi dengan susu hangat untuk teman santaimu di pagi atau sore hari.</p>
+          <button data-id="kopi-susu-panas" data-name="Kopi Susu Panas" data-price="10000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <!-- Best seller badge -->
+          <div class="absolute top-4 right-4 bg-amber text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide uppercase">Best Seller</div>
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">🍯</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Es Kopi Susu<br/>Gula Aren</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">13 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Manis alami gula aren berpadu sempurna dengan kopi pilihan.</p>
+          <button data-id="es-kopi-susu-gula-aren" data-name="Es Kopi Susu Gula Aren" data-price="13000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-2xl mb-2 block">🤍</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Es Kopi Latte</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">15 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Kopi dan susu dengan tekstur lembut yang creamy dan memuaskan.</p>
+          <button data-id="es-kopi-latte" data-name="Es Kopi Latte" data-price="15000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+      </div><!-- /panel-kopi -->
+
+      <!-- ── TEA SERIES CARDS ──────────────────────── -->
+      <div id="panel-tea" class="menu-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+           data-aos="fade-up" data-aos-duration="700">
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-matcha text-2xl mb-2 block">🍵</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Es Teh Original</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">7 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Teh segar disajikan dingin, pilihan tepat untuk hari yang terik.</p>
+          <button data-id="es-teh-original" data-name="Es Teh Original" data-price="7000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-matcha text-2xl mb-2 block">♨️</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Teh Hangat</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">7 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Kehangatan dalam secangkir teh — menemanimu di momen santai.</p>
+          <button data-id="teh-hangat" data-name="Teh Hangat" data-price="7000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-matcha text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide uppercase">Favorit</div>
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-matcha text-2xl mb-2 block">🌿</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Thai Tea</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">10 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Perpaduan teh khas Thailand dengan susu yang creamy dan wangi.</p>
+          <button data-id="thai-tea" data-name="Thai Tea" data-price="10000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-matcha text-2xl mb-2 block">🍃</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Green Tea</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">10 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Kesegaran teh hijau yang menyehatkan dan menenangkan pikiran.</p>
+          <button data-id="green-tea" data-name="Green Tea" data-price="10000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-matcha text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide uppercase">Premium</div>
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-matcha text-2xl mb-2 block">🍵</span>
+              <h3 class="font-display text-xl font-semibold text-brown">Matcha Latte</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">15 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Matcha Jepang berkualitas berpadu susu lembut — earthy, creamy, dan kaya rasa.</p>
+          <button data-id="matcha-latte" data-name="Matcha Latte" data-price="15000"
+             class="btn-wa btn-add-to-cart text-xs font-semibold px-4 py-2 rounded-full text-center">
+            + Keranjang
+          </button>
+        </div>
+
+      </div><!-- /panel-tea -->
+
+      <!-- ── BIJI KOPI SERIES CARDS ─────────────────── -->
+      <div id="panel-biji" class="menu-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+           data-aos="fade-up" data-aos-duration="700">
+
+        <!-- Card Biji Kopi Rumbia -->
+        <div class="menu-card rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-amber text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide uppercase">New Product</div>
+          
+          <div class="w-full h-48 overflow-hidden rounded-xl bg-cream-dark">
+            <img src="assets/images/rumbia.jpeg" alt="Biji Kopi Rumbia" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+          </div>
+
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-amber text-xs font-semibold uppercase tracking-wider">House Blend</span>
+              <h3 class="font-display text-xl font-semibold text-brown mt-1">Biji Kopi Rumbia</h3>
+            </div>
+            <span class="font-display text-2xl font-semibold text-amber whitespace-nowrap">45 rb</span>
+          </div>
+          <p class="text-brown-light text-sm leading-relaxed flex-1">Biji kopi premium racikan khas Rumbia dengan cita rasa buah lokal segar dan aroma cokelat karamel manis yang kuat.</p>
+          <a href="https://shopee.co.id/biji-kopi-arabica-rumbia-sulawesi-pasar-online-makassar-i.84463912.50261614283?extraParams=%7B%22display_model_id%22%3A446008894798%2C%22model_selection_logic%22%3A2%7D" target="_blank"
+             class="bg-[#EE4D2D] hover:bg-[#ff5b3a] text-white text-xs font-semibold px-4 py-2.5 rounded-full text-center flex items-center justify-center gap-1.5 shadow-md transition-colors">
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+             </svg>
+             Beli di Shopee ↗
+          </a>
+        </div>
+
+      </div><!-- /panel-biji -->
+
+      <!-- Order all CTA -->
+      <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+        <button id="cart-cta"
+           class="btn-matcha text-cream font-semibold text-sm px-10 py-4 rounded-full inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          Lihat Keranjang Belanja
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║          LOCATION & HOURS SECTION            ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section id="location" class="py-12 sm:py-16 md:py-20 px-4 sm:px-8 bg-cream">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-8 sm:mb-12 md:mb-14" data-aos="fade-up">
+        <p class="text-amber text-xs font-medium tracking-[0.3em] uppercase mb-3">Kunjungi Kami</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-light text-brown leading-tight">
+          Lokasi &amp; <em>Jam Buka</em>
+        </h2>
+        <div class="divider-ornament max-w-xs mx-auto mt-6"><span class="text-amber text-sm">✦</span></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+
+        <!-- Hours + Address -->
+        <div data-aos="fade-right" data-aos-duration="800" class="w-full">
+
+          <!-- Address -->
+          <div class="bg-brown text-cream rounded-2xl p-6 sm:p-8 mb-6">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="bg-amber/20 rounded-xl p-3 mt-0.5 shrink-0">
+                <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-cream mb-1">Alamat Kami</p>
+                <p class="text-cream/70 text-sm leading-relaxed">Jl. Maccini Raya No.85, Kedai Bayyals, Kec. Makassar, Kota Makassar, Sulawesi Selatan<br/> — 90115</p>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/oKCGKg7RStmTki7Y9" target="_blank"
+               class="btn-amber-glow text-white font-semibold text-xs px-5 py-2.5 rounded-full inline-flex items-center gap-2 w-full justify-center">
+              Buka di Google Maps ↗
+            </a>
+          </div>
+
+          <!-- Hours -->
+          <div class="bg-cream-dark rounded-2xl p-6 border border-amber/10">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="bg-amber/10 rounded-xl p-2.5">
+                <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-brown">Jam Operasional</h3>
+            </div>
+
+            <div class="flex flex-col gap-0">
+              <div class="hours-row flex justify-between items-center py-3 px-2">
+                <span class="text-sm font-medium text-brown">Senin – Jumat</span>
+                <span class="text-sm text-brown-light font-medium">07.00 – 22.00</span>
+              </div>
+              <div class="hours-row flex justify-between items-center py-3 px-2">
+                <span class="text-sm font-medium text-brown">Sabtu</span>
+                <span class="text-sm text-brown-light font-medium">07.30 – 22.00</span>
+              </div>
+              <div class="hours-row flex justify-between items-center py-3 px-2">
+                <span class="text-sm font-medium text-brown">Minggu</span>
+                <span class="text-sm text-brown-light font-medium">07.00 – 22.00</span>
+              </div>
+            </div>
+
+            <!-- Status indicator -->
+            <div id="open-status" class="mt-5 flex items-center gap-2 text-sm font-medium rounded-xl px-4 py-2.5 bg-cream border border-amber/15">
+              <span id="status-dot" class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span id="status-text" class="text-brown">Mengecek status...</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Map Embed -->
+        <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" class="w-full">
+          <div class="rounded-2xl overflow-hidden shadow-xl border border-amber/10 h-[300px] sm:h-[400px] md:h-[450px] bg-cream-dark">
+            <!--
+              CARA GANTI PETA:
+              1. Buka Google Maps → cari lokasi → klik Share → Embed a map
+              2. Salin kode iframe dan tempelkan di sini, ganti <div> ini.
+              Contoh:
+              <iframe src="https://www.google.com/maps/embed?pb=..." ...></iframe>
+            -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.7873447848924!2d119.4320282!3d-5.1379109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbefd707e2b5711%3A0x6faefff2247a5473!2sKedai%20Bayyals!5e0!3m2!1sid!2sid!4v1780650684780!5m2!1sid!2sid" class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="text-center text-xs text-brown-light/60 mt-3">📍 Ganti iframe di atas dengan embed Google Maps lokasi sebenarnya</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║            INSTAGRAM CTA BANNER              ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <section class="bg-brown py-16 px-6 sm:px-10">
+    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <p class="text-amber text-xs tracking-[0.3em] uppercase mb-4">Follow Kami</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light text-cream mb-4 leading-snug">
+        Ikuti Perjalanan Rasa Kami<br/><em>di Instagram</em>
+      </h2>
+      <p class="text-cream/60 text-sm mb-8">Behind-the-scenes, menu terbaru, dan cerita dari setiap sudut Kedai Bayyals.</p>
+      <a href="https://instagram.com/kedai.bayyals" target="_blank"
+         class="inline-flex items-center gap-3 bg-gradient-to-r from-amber/90 to-[#D4952A] text-white font-semibold text-sm px-8 py-4 rounded-full hover:shadow-[0_0_28px_rgba(193,127,36,0.5)] transition-all duration-300">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @kedai.bayyals
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║                   FOOTER                     ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <footer class="bg-charcoal py-8 px-6 sm:px-10">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-cream/40 text-xs">
+      <p class="font-display text-lg text-cream/60 italic">Kedai Bayyals</p>
+      <p>© Kedai Bayyals. All rights reserved.</p>
+      <a href="https://instagram.com/kedai.bayyals" target="_blank" class="hover:text-amber transition-colors duration-200">
+        Instagram @kedai.bayyals
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║         FLOATING WHATSAPP BUTTON             ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <a href="https://wa.me/6288973127414?text=Halo%20Kedai%20Bayyals%2C%20saya%20mau%20pesan!" target="_blank"
+     class="wa-float fixed bottom-6 right-5 z-50 bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-200"
+     aria-label="Chat WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- ── Tooltip label on WA button (desktop) ──────── -->
+  <div class="fixed bottom-[5.5rem] right-5 z-50 hidden sm:flex items-center pointer-events-none">
+    <span class="bg-charcoal text-cream text-xs font-medium px-3 py-1.5 rounded-full shadow-lg opacity-0 translate-x-2 transition-all duration-200" id="wa-tooltip">
+      Chat Kami
+    </span>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║          FLOATING CART BUTTON                ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <button id="cart-btn" class="fixed bottom-6 right-24 z-50 bg-amber text-white rounded-full w-14 h-14 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-200" aria-label="Buka Keranjang">
+    <div class="relative">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+      </svg>
+      <span id="cart-badge" class="absolute -top-3 -right-3 bg-matcha text-cream text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform duration-300">0</span>
+    </div>
+  </button>
+
+  <!-- ── Tooltip label on Cart button (desktop) ────── -->
+  <div class="fixed bottom-[5.5rem] right-24 z-50 hidden sm:flex items-center pointer-events-none">
+    <span class="bg-charcoal text-cream text-xs font-medium px-3 py-1.5 rounded-full shadow-lg opacity-0 translate-x-2 transition-all duration-200" id="cart-tooltip">
+      Keranjang
+    </span>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║           CART DRAWER & OVERLAY              ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <div id="cart-overlay" class="fixed inset-0 bg-charcoal/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-cream z-50 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header -->
+    <div class="p-5 border-b border-brown/10 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <h3 class="font-display text-xl font-semibold text-brown">Keranjang Belanja</h3>
+      </div>
+      <button id="cart-close" class="p-2 text-brown-light hover:text-amber transition-colors" aria-label="Tutup Keranjang">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items" class="flex-1 overflow-y-auto p-5 flex flex-col gap-4">
+      <!-- Empty State -->
+      <div id="cart-empty" class="flex flex-col items-center justify-center h-full text-center text-brown-light/60 py-10">
+        <span class="text-4xl mb-3">🛒</span>
+        <p class="text-sm">Keranjang belanja Anda masih kosong.</p>
+        <a href="#menu" id="start-shopping" class="text-xs font-semibold text-amber hover:underline mt-2 inline-block">Mulai Belanja</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-5 border-t border-brown/10 bg-cream-dark">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-sm font-medium text-brown-light">Total Pembayaran:</span>
+        <span id="cart-total" class="font-display text-2xl font-semibold text-amber">Rp 0</span>
+      </div>
+      <button id="checkout-btn" class="w-full btn-matcha text-cream text-center text-sm font-semibold py-3.5 rounded-full flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Kirim Pesanan ke WhatsApp
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║               JAVASCRIPT                     ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <!-- Main Interactive JavaScript -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

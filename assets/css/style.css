@@ -1,0 +1,182 @@
+/* ─── Base ─────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { font-family: 'DM Sans', sans-serif; }
+body { background-color: #FDFBF7; color: #3E2723; }
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FDFBF7; }
+::-webkit-scrollbar-thumb { background: #C17F24; border-radius: 3px; }
+
+/* ─── Glassmorphism Navbar ─────────────────────────── */
+.glass-nav {
+  background: rgba(253, 251, 247, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(193, 127, 36, 0.12);
+}
+
+/* ─── Hero ─────────────────────────────────────────── */
+.hero-bg {
+  background-image:
+    linear-gradient(to bottom, rgba(30,20,10,0.52) 0%, rgba(30,20,10,0.35) 60%, rgba(30,20,10,0.72) 100%),
+    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1400&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .hero-bg { background-attachment: scroll; }
+}
+
+/* ─── Amber glow CTA ───────────────────────────────── */
+.btn-amber-glow {
+  background: linear-gradient(135deg, #C17F24 0%, #D4952A 100%);
+  box-shadow: 0 0 0 0 rgba(193,127,36,0.5);
+  transition: box-shadow 0.35s ease, transform 0.2s ease;
+}
+.btn-amber-glow:hover {
+  box-shadow: 0 0 28px 6px rgba(193,127,36,0.45);
+  transform: translateY(-2px);
+}
+
+/* ─── Matcha CTA ───────────────────────────────────── */
+.btn-matcha {
+  background: #2E4F4F;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+.btn-matcha:hover {
+  background: #3D6B6B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(46,79,79,0.35);
+}
+
+/* ─── Menu Tabs ────────────────────────────────────── */
+.tab-btn { transition: all 0.25s ease; }
+.tab-btn.active {
+  background: #2E4F4F;
+  color: #FDFBF7;
+  box-shadow: 0 4px 14px rgba(46,79,79,0.3);
+}
+.tab-btn:not(.active):hover {
+  background: #F5F0E8;
+  color: #3E2723;
+}
+
+/* ─── Menu Cards ───────────────────────────────────── */
+.menu-card {
+  background: #FDFBF7;
+  border: 1px solid rgba(62,39,35,0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(62,39,35,0.12);
+  border-color: rgba(193,127,36,0.28);
+}
+
+/* ─── WA order button on card ──────────────────────── */
+.btn-wa {
+  border: 1px solid rgba(46,79,79,0.35);
+  color: #2E4F4F;
+  transition: all 0.22s ease;
+}
+.btn-wa:hover {
+  background: #2E4F4F;
+  color: #FDFBF7;
+  border-color: #2E4F4F;
+}
+
+/* ─── Floating WA Button ───────────────────────────── */
+.wa-float {
+  animation: waPulse 2.4s infinite;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
+  50%       { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+}
+
+/* ─── Section divider ──────────────────────────────── */
+.divider-ornament {
+  display: flex; align-items: center; gap: 12px;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(193,127,36,0.4), transparent);
+}
+
+/* ─── Noise texture overlay ────────────────────────── */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* ─── Hours item ───────────────────────────────────── */
+.hours-row {
+  border-bottom: 1px dashed rgba(62,39,35,0.12);
+  transition: background 0.2s;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row:hover { background: rgba(193,127,36,0.06); border-radius: 6px; }
+
+/* ─── Mobile nav overlay ───────────────────────────── */
+#mobile-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#mobile-menu.hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+#mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ─── Keyframe Animations ──────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Cart Drawer & Overlay ────────────────────────── */
+#cart-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+#cart-drawer.active {
+  transform: translateX(0);
+}
+
+/* ─── Cart Items Scrollbar ────────────────────────── */
+#cart-items::-webkit-scrollbar {
+  width: 4px;
+}
+#cart-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+#cart-items::-webkit-scrollbar-thumb {
+  background: rgba(193, 127, 36, 0.25);
+  border-radius: 2px;
+}
+
+/* ─── Disabled button styling override ─────────────── */
+#checkout-btn:disabled {
+  background: #a1b0b0;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
